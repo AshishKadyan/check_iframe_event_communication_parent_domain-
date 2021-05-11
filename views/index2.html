@@ -28,7 +28,16 @@
     try {
         function myFunction() {
 
-            window.parent.postMessage("HELLO_PARENT", 'https://check-iframe-event-parent.herokuapp.com/')
+            window.parent.postMessage(
+                {
+                    event_id: 'my_cors_message',
+                    data: {
+                        v1: 'value1', 
+                        v2: 'value2'
+                    }
+                }, 
+                "*" //or "www.parentpage.com"
+            ); 
         }
 
 
