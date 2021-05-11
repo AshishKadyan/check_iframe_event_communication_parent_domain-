@@ -29,7 +29,7 @@
 <script>
     window.addEventListener('message', function(event) {
         if(event.data.event_id === 'my_cors_message'){
-            alert(event.data.data);
+            alert(JSON.stringify(event.data));
         }
     });
 </script>
