@@ -21,19 +21,22 @@
 
 <body>
     <div id="result"></div>
-
+    <button onclick="myFunction()">Click me</button>
 </body>
 
 <script>
     try {
-        var eventdata = {
-            'message': 'redirect_to_sign_up',
+        function myFunction() {
+            var eventdata = {
+                'message': 'redirect_to_sign_up',
+            }
+
+            // add proposed event structure 
+            var event = new CustomEvent('goto_signup', { detail: eventdata });
+
+            window.parent.document.dispatchEvent(event);
         }
 
-        // add proposed event structure 
-        var event = new CustomEvent('goto_signup', { detail: eventdata });
-
-        window.parent.document.dispatchEvent(event);
 
     }
     catch (err) {
