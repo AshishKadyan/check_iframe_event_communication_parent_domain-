@@ -27,15 +27,14 @@
 </body>
 
 <script>
-    window.document.addEventListener('goto_signup', (event)=>{
-        console.log("event", event)
-        if(event.detail.message == 'redirect_to_sign_up'){
-            console.log("Successfully received event ",event.detail.message);
-            // go to the diagnostic results/feedback screen  
-        } else {
-       // show error message		
-        }
-    }, false);
+    window.addEventListener('message', handleMessage, false);
+     function handleMessage(event) {  
+     if (event.origin != "https://check-iframe-event-child.herokuapp.com/") { return; }  
+     switch(event.data) {   
+          case "HELLO_PARENT":  
+             alert("Recieved session storage failure event");  
+             break;  
+     } 
  
 </script>
 </body>
