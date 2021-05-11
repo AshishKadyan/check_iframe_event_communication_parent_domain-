@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Frontend Library demonstration - WhatIsMyBrowser.com</title>
+    <meta name="description" content="check if we can set session storage" />
+
+    <style>
+        a {
+            color: #508db4;
+        }
+
+        /* a quick reset on the IP address ul */
+        #localips-detection ul,
+        #localips-detection li {
+            padding-left: 0;
+            list-style-position: inside;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <iframe src="https://checksessionstoragedomain-2.herokuapp.com/" title="check for session storage"></iframe>
+
+</body>
+
+<script>
+     window.addEventListener('message', handleMessage, false);
+     function handleMessage(event) {  
+     if (event.origin != "https://checksessionstoragedomain-2.herokuapp.com") { return; }  
+     switch(event.data) {   
+          case "HELLO_PARENT":  
+             alert("Recieved session storage failure event");  
+             break;  
+     } 
+ }
+</script>
+</body>
+
+</html>

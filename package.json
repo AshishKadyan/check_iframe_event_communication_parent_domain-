@@ -1,22 +1,21 @@
 {
-  "name": "third-party-cookie-check",
-  "version": "2.0.0",
-  "description": "Check if the browser supports third-party cookies.",
-  "main": "src/index.js",
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boblauer/third-party-cookie-check.git"
-  },
-  "keywords": [
-    "cookie"
-  ],
-  "author": "Bob Lauer <rlauer@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/boblauer/third-party-cookie-check/issues"
-  },
-  "homepage": "https://github.com/boblauer/third-party-cookie-check#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.5",
+    "express": "~4.16.1",
+    "fetch": "^1.1.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7",
+    "pug": "2.0.0-beta11",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
 }
