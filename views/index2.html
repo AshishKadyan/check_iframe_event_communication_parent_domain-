@@ -27,14 +27,8 @@
 <script>
     try {
         function myFunction() {
-            var eventdata = {
-                'message': 'redirect_to_sign_up',
-            }
 
-            // add proposed event structure 
-            var event = new CustomEvent('goto_signup', { detail: eventdata });
-
-            window.parent.document.dispatchEvent(event);
+            window.parent.postMessage("HELLO_PARENT", 'https://check-iframe-event-parent.herokuapp.com/')
         }
 
 
