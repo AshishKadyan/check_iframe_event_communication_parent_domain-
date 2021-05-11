@@ -27,15 +27,11 @@
 </body>
 
 <script>
-    window.addEventListener('message', handleMessage, false);
-     function handleMessage(event) {  
-     if (event.origin != "https://check-iframe-event-child.herokuapp.com") { return; }  
-     switch(event.data) {   
-          case "HELLO_PARENT":  
-             alert("Received event from child iframe");  
-             break;  
-     } 
-    }
+    window.addEventListener('cors_event', function(event) {
+        if(event.data.event_id === 'my_cors_message'){
+            alert(event.data.data);
+        }
+    });
 </script>
 </body>
 
