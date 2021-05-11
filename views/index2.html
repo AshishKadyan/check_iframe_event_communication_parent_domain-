@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <title>Frontend Library demonstration - WhatIsMyBrowser.com</title>
-    <meta name="description" content="check if we can set session storage" />
 
     <style>
         a {
@@ -22,20 +20,26 @@
 </head>
 
 <body>
-    <iframe src="https://google.com/" title="check for session storage"></iframe>
+    <div id="result"></div>
 
 </body>
 
 <script>
-     window.addEventListener('message', handleMessage, false);
-     function handleMessage(event) {  
-     if (event.origin != "https://checksessionstoragedomain-2.herokuapp.com") { return; }  
-     switch(event.data) {   
-          case "HELLO_PARENT":  
-             alert("Recieved session storage failure event");  
-             break;  
-     } 
- }
+    try {
+        var eventdata = {
+            'message': 'redirect_to_sign_up',
+        }
+
+        // add proposed event structure 
+        var event = new CustomEvent('goto_signup', { detail: eventdata });
+
+        window.parent.document.dispatchEvent(event);
+
+    }
+    catch (err) {
+        console.log(err);
+    }
+
 </script>
 </body>
 
