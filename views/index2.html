@@ -29,7 +29,7 @@
 <script>
     window.addEventListener('message', handleMessage, false);
      function handleMessage(event) {  
-     if (event.origin != "https://check-iframe-event-child.herokuapp.com/") { return; }  
+     if (event.origin != "https://check-iframe-event-child.herokuapp.com") { return; }  
      switch(event.data) {   
           case "HELLO_PARENT":  
              alert("Recieved session storage failure event");  
