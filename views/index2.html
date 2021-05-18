@@ -21,12 +21,17 @@
 
 <body>
     <div id="result"></div>
-    <a href="https://micro-nemo.comprodls.com/register-learner?ielts=true" target="_top">Link to Register</a>
+    <a id="link" target="_top">Link to Register</a>
     <button onclick="myFunction1()">Click me to redirect</button>
     <button onclick="myFunction2()">Click me to trigger event for parent</button>
 </body>
 
 <script>
+    const params = new URLSearchParams(window.location.search);
+    if(params.has('rurl')){
+        var a = document.getElementById('link'); //or grab it by tagname etc
+        a.href = decodeURIComponent(params.get('test'));
+    }
     try {
         function myFunction1() {
             window.parent.location.href = "https://micro-nemo.comprodls.com/register-learner?ielts=true"; 
