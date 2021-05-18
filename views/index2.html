@@ -30,7 +30,7 @@
     const params = new URLSearchParams(window.location.search);
     if(params.has('rurl')){
         var a = document.getElementById('link'); //or grab it by tagname etc
-        a.href = decodeURIComponent(params.get('test'));
+        a.href = decodeURIComponent(params.get('rurl'));
     }
     try {
         function myFunction1() {
